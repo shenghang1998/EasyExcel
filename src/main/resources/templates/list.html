@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>测试</title>
+
+	<body>
+
+	<form action="/list" method="get">
+		<table class="table table-striped table-sm">
+			<thead>
+			<tr>
+				<th>序号</th>
+				<th>名字</th>
+				<th>年龄</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="user:${users}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.age}"></td>
+			</tr>
+			</tbody>
+		</table>
+
+	</form>
+
+		<h2>下载页面</h2>
+		<form action="/download" method="get" enctype="multipart/form-data">
+			<p><input type="submit" value="文件下载"></p>
+		</form>
+
+		<h2>读取页面</h2>
+		<form action="/read" method="post" enctype="multipart/form-data">
+			<input type="file" name="file">
+			<p><input type="submit" value="提交"></p>
+		</form>
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript" src="asserts/js/popper.min.js"></script>
+		<script type="text/javascript" src="asserts/js/bootstrap.min.js"></script>
+		<!-- Icons -->
+		<script type="text/javascript" src="asserts/js/feather.min.js"></script>
+		<script>
+			feather.replace()
+		</script>
+
+		<!-- Graphs -->
+		<script type="text/javascript" src="asserts/js/Chart.min.js"></script>
+	</body>
+
+</html>

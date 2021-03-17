@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- sys_test_comprehensive -->
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+
+    <!-- 查询所有数据 -->
+    <select id="getAllUsers" parameterType="com.example.demo.Entity.User" resultType="com.example.demo.Entity.User">
+        SELECT
+        *
+        FROM user
+    </select>
+
+    <!-- 插入数据 -->
+    <insert id="addUser" parameterType="com.example.demo.Entity.User">
+        INSERT INTO user (
+            id, name, age
+        ) VALUES (
+            #{id},
+            #{name},
+            #{age}
+        )
+    </insert>
+
+</mapper>
